@@ -1,34 +1,38 @@
 # Activity Log — Invoice Builder
 
 ## Current status
-- Application version: 0.1.0
+- Application version: 0.2.0
 - Repository: https://github.com/Mrk0p/Invoice_builder
 - Stack: React 18, Vite, JavaScript, CSS, Lucide React
 - Reference design: supplied September invoice PDF
-- Release state: initial scaffold committed; build and browser/PDF output not yet run in this environment
+- Active refactor branch: refactor/feature-based-structure
+- Validation: build and browser/PDF visual checks have not yet been run in this environment.
 
 ## Change history
 
 ### 2026-10-26 — Initial React scaffold (v0.1.0)
-- Added Vite/React package configuration and app entry point.
-- Added editable invoice fields for invoice metadata, seller/client details, service line items, tax, payment information, and footer.
-- Added live invoice preview and derived subtotal/tax/total calculations.
-- Added add/remove item controls, reset confirmation, and browser print-to-PDF action.
-- Added responsive editor layout and A4 print styles based on the supplied reference.
-- Added version display injected from package.json.
-- Added README setup instructions and documented known limitations.
-- Tests: Not run. GitHub file operations do not run npm install, Vite build, browser interaction, or PDF visual inspection.
-- Commits:
-  - `ca5685c9b529eb80d658216df8773aca0ba49096` — package.json
-  - `2f8ba30c2a6791c424166087ade1717a1139c1fe` — index.html
-  - `93056d749fafd8015b82be3585a504e9ae092283` — Vite config scaffold
-  - `5949f59340838e1707410d49e7b95d6600668c95` — React entry point
-  - `b2d39cb2357d23e63edb7d3e9d6ab00704c4cc5a` — editable invoice editor
-  - `14a1277ad529a464d54f3795b093898a120f908f` — responsive and print styles
-  - `295978c64c385354c264b5a3dacb47ca7ca73ed4` — app version define
-  - `23273399da0675e7973890377cb92b9aa2ad73c5` — development protocol
-  - `a06245333e32f3fb6e49834ac8dbf975eafded18` — activity log initial commit
-  - `e7d1b2b6bd23dfab22f36238ad781723712b5433` — README setup guide
+- Added Vite/React configuration, editor, live preview, calculations, responsive styling, print styles, and project docs.
+- Initial scaffold commit history is available in the GitHub repository.
+
+### 2026-10-26 — Feature-based architecture (v0.2.0)
+- Extracted editable invoice defaults into `src/data/initialInvoice.js`.
+- Extracted reusable form field and INR formatter into `src/shared/`.
+- Split editor sections into independent modules under `src/features/`: invoice details, seller, client, line items, payment, footer, and editor composition.
+- Split invoice preview into a preview container and components for header, billing parties, services table, totals, payment details, and footer.
+- Extracted app toolbar into `src/features/app-shell/AppHeader.jsx`.
+- Updated `src/App.jsx` to compose feature modules and keep invoice state/calculations at the app level.
+- Bumped version to 0.2.0.
+- Tests: Not run. GitHub file operations do not execute npm install, Vite build, browser interaction, or PDF visual inspection.
+- Key commits on this branch:
+  - `69fcf9008aeb5d796bff73a7a3d96e609cecf84b` — invoice defaults module
+  - `6abe7989cf9338256c08c94c2d5ea073424d46d2` — currency formatter
+  - `bd5597d79d9f696b7d8b75442882f1b92ba4e594` — reusable field
+  - `95613f6b052d6a33ecb925fc97faef12b17bfe97` — line-item feature
+  - `c3992d37418b67aa50e7b2c769b585890ba27ef3` — preview composition
+  - `8f3b7adfa60b0725e5626bb9968145fe996c8ecd` — editor composition
+  - `a1e59e95db00eadfdf22978c3ef27d84e3e0e865` — app header
+  - `05ec4e68aa665a9b26e848ae9c27610f33bc2cee` — App composition refactor
+  - `01d23e0465109eabb7f8a33ea0c09501b6ebe4fb` — version bump
 
 ## Rules
 - Every accepted application-code change must increment package.json version and be recorded here.
