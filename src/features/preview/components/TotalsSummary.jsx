@@ -1,0 +1,3 @@
+export default function TotalsSummary({ totals, taxRate, formatCurrency }) {
+  return <div className="totals"><div><span>Subtotal</span><strong>{formatCurrency(totals.subtotal)}</strong></div><div><span>GST / Tax ({Number(taxRate) || 0}%)</span><strong>{formatCurrency(totals.tax)}</strong></div><div className="total-due"><span>Total Due</span><strong>{formatCurrency(totals.total)}</strong></div></div>;
+}
