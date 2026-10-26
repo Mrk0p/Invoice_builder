@@ -16,6 +16,7 @@
 - Added add/remove item controls, reset confirmation, and browser print-to-PDF action.
 - Added responsive editor layout and A4 print styles based on the supplied reference.
 - Added version display injected from package.json.
+- Added README setup instructions and documented known limitations.
 - Tests: Not run. GitHub file operations do not run npm install, Vite build, browser interaction, or PDF visual inspection.
 - Commits:
   - `ca5685c9b529eb80d658216df8773aca0ba49096` — package.json
@@ -27,6 +28,7 @@
   - `295978c64c385354c264b5a3dacb47ca7ca73ed4` — app version define
   - `23273399da0675e7973890377cb92b9aa2ad73c5` — development protocol
   - `a06245333e32f3fb6e49834ac8dbf975eafded18` — activity log initial commit
+  - `e7d1b2b6bd23dfab22f36238ad781723712b5433` — README setup guide
 
 ## Rules
 - Every accepted application-code change must increment package.json version and be recorded here.
